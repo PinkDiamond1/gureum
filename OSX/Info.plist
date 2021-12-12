@@ -17,36 +17,15 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>${VERSION}</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleSignature</key>
 	<string>yno1</string>
 	<key>CFBundleVersion</key>
-	<string>${VERSION}</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>ComponentInputModeDict</key>
 	<dict>
 		<key>tsInputModeListKey</key>
 		<dict>
-			<key>org.youknowone.inputmethod.Gureum.system</key>
-			<dict>
-				<key>TISInputSourceID</key>
-				<string>org.youknowone.inputmethod.Gureum.system</string>
-				<key>TISIntendedLanguage</key>
-				<string>en</string>
-				<key>tsInputModeAlternateMenuIconFileKey</key>
-				<string>eng.png</string>
-				<key>tsInputModeDefaultStateKey</key>
-				<true/>
-				<key>tsInputModeIsVisibleKey</key>
-				<true/>
-				<key>tsInputModeMenuIconFileKey</key>
-				<string>eng.png</string>
-				<key>tsInputModePaletteIconFileKey</key>
-				<string>eng.png</string>
-				<key>tsInputModePrimaryInScriptKey</key>
-				<true/>
-				<key>tsInputModeScriptKey</key>
-				<string>smRoman</string>
-			</dict>
 			<key>org.youknowone.inputmethod.Gureum.colemak</key>
 			<dict>
 				<key>TISInputSourceID</key>
@@ -367,6 +346,27 @@
 				<string>qwerty.png</string>
 				<key>tsInputModePaletteIconFileKey</key>
 				<string>qwerty.png</string>
+				<key>tsInputModePrimaryInScriptKey</key>
+				<true/>
+				<key>tsInputModeScriptKey</key>
+				<string>smRoman</string>
+			</dict>
+			<key>org.youknowone.inputmethod.Gureum.system</key>
+			<dict>
+				<key>TISInputSourceID</key>
+				<string>org.youknowone.inputmethod.Gureum.system</string>
+				<key>TISIntendedLanguage</key>
+				<string>en</string>
+				<key>tsInputModeAlternateMenuIconFileKey</key>
+				<string>eng.png</string>
+				<key>tsInputModeDefaultStateKey</key>
+				<true/>
+				<key>tsInputModeIsVisibleKey</key>
+				<true/>
+				<key>tsInputModeMenuIconFileKey</key>
+				<string>eng.png</string>
+				<key>tsInputModePaletteIconFileKey</key>
+				<string>eng.png</string>
 				<key>tsInputModePrimaryInScriptKey</key>
 				<true/>
 				<key>tsInputModeScriptKey</key>

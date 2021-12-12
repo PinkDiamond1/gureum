@@ -7,9 +7,9 @@
 //
 
 import Cocoa
-import FirebaseCrashlytics
 import Foundation
 import GureumCore
+import UserNotifications
 import Hangul
 
 class NotificationCenterDelegate: NSObject, NSUserNotificationCenterDelegate {
@@ -47,33 +47,8 @@ class GureumAppDelegate: NSObject, NSApplicationDelegate, GureumApplicationDeleg
     func applicationDidFinishLaunching(_: Notification) {
         UserDefaults.standard.register(defaults: ["NSApplicationCrashOnExceptions": true])
 
-        NSUserNotificationCenter.default.delegate = notificationCenterDelegate
-        let notificationCenter = NSUserNotificationCenter.default
-        #if DEBUG
-            let notification = NSUserNotification()
-            notification.title = "디버그 빌드 알림"
-            notification.hasActionButton = false
-            notification.hasReplyButton = false
-            notification.informativeText = "이 버전은 디버그 빌드입니다. 키 입력이 로그로 남을 수 있어 안전하지 않습니다."
-            notificationCenter.deliver(notification)
-            // Fabric.with([Answers.self])
-            GureumShowPreferencesWindow()
-        #else
-            Fabric.with([Crashlytics.self, Answers.self])
-        #endif
-
-        UpdateManager.shared.notifyUpdateIfNeeded()
-
         // IMKServer를 띄워야만 입력기가 동작한다
         _ = InputMethodServer.shared
-
-        answers.logLaunch()
-
-        Timer.scheduledTimer(timeInterval: 3600, target: answers, selector: #selector(AnswersHelper.logUptime), userInfo: nil, repeats: true)
-        // for 10.12+
-        // Timer.scheduledTimer(withTimeInterval: 3600, repeats: true) { _ in
-        //   answers.logUptime()
-        // }
 
         watcher.reloadConfiguration()
     }

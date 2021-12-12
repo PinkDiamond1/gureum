@@ -1,17 +1,16 @@
 workspace 'Gureum'
 use_frameworks!
-platform :osx, "10.13"
+platform :osx, "11.0"
 
 target 'OSXCore' do
     project 'Gureum.xcodeproj'
     pod 'cdebug'
     pod 'FoundationExtension', '~> 2.1.0'
-    pod 'Fuse'
+    pod 'Fuse', '~> 1.4.0'
 end
 target 'OSX' do
     project 'Gureum.xcodeproj'
     pod 'FoundationExtension', '~> 2.1.0'
-    pod 'Firebase/Crashlytics'
     pod 'MASShortcut'
 end
 target 'Preferences' do
